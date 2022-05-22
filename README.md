@@ -1,1 +1,1 @@
-(View the Website)[https://jacobbolden.com]
+[View the Website](https://jacobbolden.com)
