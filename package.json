@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My website portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegoldenbolden/portfolio.git"
+  },
+  "keywords": [
+    "Jacob",
+    "Bolden",
+    "portfolio",
+    "developer"
+  ],
+  "author": "Jacob Bolden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thegoldenbolden/portfolio/issues"
+  },
+  "homepage": "https://github.com/thegoldenbolden/portfolio#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1"
+  }
+}
