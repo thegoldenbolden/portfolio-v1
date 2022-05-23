@@ -7,8 +7,11 @@
 	gap: 50px;
 
 	#left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		margin: 5em 0;
-		width: 70%;
+		width: 100%;
 
 		h1 {
 			font-size: 3em;
@@ -22,10 +25,9 @@
 
 		.actions {
 			display: flex;
-			gap: 2em;
+			flex-wrap: wrap;
+			gap: 1em;
 			margin: 1em 0;
-			height: max-content;
-			width: max-content;
 
 			a {
 				padding: .5em;
@@ -70,7 +72,9 @@
 		}
 
 		.socials {
+			margin-top: 1em;
 			display: flex;
+			flex-wrap: wrap;
 			gap: 16px;
 			transition: .3s ease-in color;
 
@@ -88,6 +92,7 @@
 	}
 
 	#right {
+		display: none;
 		height: 100%;
 		width: 100%;
 
@@ -111,8 +116,14 @@
 		display: none;
 	}
 
+	.container {
+		justify-content: center;
+	}
 
 	#left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		flex-grow: 1;
 	}
 }
