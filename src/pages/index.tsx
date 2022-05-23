@@ -39,10 +39,12 @@ const Home = () => {
         />
       </Head>
       <Script
+        id="tag-m"
         async={true}
         src="https://www.googletagmanager.com/gtag/js?id=G-PDMNL15FS6"
       />
       <Script
+        id="set-t"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
