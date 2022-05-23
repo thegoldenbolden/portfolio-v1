@@ -11,12 +11,12 @@ const Project = ({ project }: { project: P }) => {
           <h2>{project.name}</h2>
           <div className={styles.action}>
             {project.repo && (
-              <a href={project.repo} target="_blank" rel="noopener">
+              <a href={project.repo} target="_blank" rel="noopener noreferrer">
                 <VscGithubAlt size={24} color="$primary" />
               </a>
             )}
             {project.live && (
-              <a href={project.live} target="_blank" rel="noopener">
+              <a href={project.live} target="_blank" rel="noopener noreferrer">
                 <VscLinkExternal size={24} color="$primary" />
               </a>
             )}
@@ -25,7 +25,8 @@ const Project = ({ project }: { project: P }) => {
         <div className={styles.dsc}>
           <div className={styles.image}>
             <Image
-              src={`/projects/${project.img}`}
+              src={`/projects/${project.img.src}`}
+              alt={project.img.alt}
               layout="responsive"
               objectFit="cover"
               height={210}

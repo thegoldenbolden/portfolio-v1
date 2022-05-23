@@ -7,7 +7,10 @@ export type P = {
   tags: string[];
   repo?: string;
   live?: string;
-  img?: string;
+  img?: {
+    src: string;
+    alt: string;
+  };
 };
 
 const Projects = () => {
@@ -16,39 +19,54 @@ const Projects = () => {
       name: "PokéTCG",
       description: "Find prices of any Pokémon card",
       live: "https://poketcgg.netlify.app",
-      img: "pokebinder.png",
       tags: ["NextJS", "ReactJS", "Netlify"],
+      img: {
+        src: "pokebinder.png",
+        alt: "a screenshot of the poketcg website",
+      },
     },
     {
       name: "Pokédex",
       description: "Find all 898 Pokémon using this Pokédex. 🔎",
       repo: "https://github.com/thegoldenbolden/pokedex",
       live: "https://thegoldenbolden.github.io/pokedex",
-      img: "pokedex.png",
       tags: ["HTML", "CSS", "Javascript"],
+      img: {
+        src: "pokedex.png",
+        alt: "a screenshot of the pokedex site",
+      },
     },
     {
       name: "Trivia",
       description: "Test your brain with this trivia game. 🧠",
       repo: "https://github.com/thegoldenbolden/trivia",
       live: "https://thegoldenbolden.github.io/trivia/",
-      img: "trivia.png",
       tags: ["HTML", "CSS", "Javascript"],
+      img: {
+        src: "pokedex.png",
+        alt: "a screenshot of the trivia site",
+      },
     },
     {
       name: "Portfolio",
       description: "The website you're currently on 😀",
       repo: "https://github.com/thegoldenbolden/portfolio",
       live: "https://jacobbolden.com",
-      img: "portfolio_v1.png",
       tags: ["NextJS", "ReactJS", "Netlify", "Typescript", "Sass"],
+      img: {
+        src: "pokedex.png",
+        alt: "a screenshot of this site",
+      },
     },
     {
       name: "Pasta King",
       description: "A multi-purpose discord bot",
       repo: "https://github.com/thegoldenbolden/pastaking",
-      img: "pastaking.png",
       tags: ["Typescript"],
+      img: {
+        src: "pastaking.png",
+        alt: "the bot showing the color of #faca95",
+      },
     },
   ];
 
