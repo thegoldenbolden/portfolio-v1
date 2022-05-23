@@ -38,22 +38,6 @@ const Home = () => {
           content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
         />
       </Head>
-      <Script
-        id="tag-m"
-        async={true}
-        src="https://www.googletagmanager.com/gtag/js?id=G-PDMNL15FS6"
-      />
-      <Script
-        id="set-t"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-										function gtag(){dataLayer.push(arguments);}
-										gtag('js', new Date());
-
-										gtag('config', 'G-PDMNL15FS6');`,
-        }}
-      />
       <Header />
       <Hero />
       <Projects />
