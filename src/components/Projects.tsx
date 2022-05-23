@@ -41,7 +41,14 @@ const Projects = () => {
       repo: "https://github.com/thegoldenbolden/portfolio",
       live: "https://jacobbolden.com",
       img: "portfolio_v1.png",
-      tags: ["NextJS", "ReactJS", "Netlify", "Sass"],
+      tags: ["NextJS", "ReactJS", "Netlify", "Typescript", "Sass"],
+    },
+    {
+      name: "Pasta King",
+      description: "A multi-purpose discord bot",
+      repo: "https://github.com/thegoldenbolden/pastaking",
+      img: "pastaking.png",
+      tags: ["Typescript"],
     },
   ];
 
