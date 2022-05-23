@@ -1,10 +1,13 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "private": "true",
   "description": "My website portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -23,10 +26,19 @@
   },
   "homepage": "https://github.com/thegoldenbolden/portfolio#readme",
   "dependencies": {
-    "axios": "^0.27.2",
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "sass": "^1.52.1",
+    "sharp": "^0.30.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "eslint": "^8.16.0",
+    "eslint-config-next": "^12.1.6",
+    "typescript": "^4.6.4"
   }
 }
