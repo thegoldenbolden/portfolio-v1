@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
@@ -37,6 +38,20 @@ const Home = () => {
           content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
         />
       </Head>
+      <Script
+        async={true}
+        src="https://www.googletagmanager.com/gtag/js?id=G-PDMNL15FS6"
+      />
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+										function gtag(){dataLayer.push(arguments);}
+										gtag('js', new Date());
+
+										gtag('config', 'G-PDMNL15FS6');`,
+        }}
+      />
       <Header />
       <Hero />
       <Projects />
