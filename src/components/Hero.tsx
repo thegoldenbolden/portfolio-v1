@@ -39,9 +39,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div id={styles.right}>
-        <div className="glass">JB</div>
-      </div>
     </section>
   );
 };
