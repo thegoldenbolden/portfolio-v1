@@ -14,8 +14,8 @@ const Hero = () => {
   return (
     <section id="hero" className={styles.container}>
       <div id={styles.left}>
-        <h1>Hi, I'm Jacob</h1>
-        <p>Let's build something special.</p>
+        <h1>{"Hi, I'm Jacob"}</h1>
+        <p>{"Let's build something special."}</p>
         <div className={styles.actions}>
           <a
             href="mailto: jlbolden.pro@gmail.com"

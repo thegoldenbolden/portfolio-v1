@@ -43,7 +43,7 @@ const Projects = () => {
       live: "https://thegoldenbolden.github.io/trivia/",
       tags: ["HTML", "CSS", "Javascript"],
       img: {
-        src: "pokedex.png",
+        src: "trivia.png",
         alt: "a screenshot of the trivia site",
       },
     },
@@ -54,7 +54,7 @@ const Projects = () => {
       live: "https://jacobbolden.com",
       tags: ["NextJS", "ReactJS", "Netlify", "Typescript", "Sass"],
       img: {
-        src: "pokedex.png",
+        src: "portfolio_v1.png",
         alt: "a screenshot of this site",
       },
     },
