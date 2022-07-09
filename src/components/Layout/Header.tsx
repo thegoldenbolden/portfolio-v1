@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MdMailOutline } from "react-icons/md";
 import { BsGrid, BsHouse, BsFilePdf } from "react-icons/bs";
-import Image from "next/image";
+import CustomImage from "../Image";
 
 const Header = () => {
  const [active, setActive] = useState(0);
@@ -25,7 +25,7 @@ const Header = () => {
    <nav>
     <Link href="/">
      <a id="logo" style={{ textDecoration: "none", position: "relative", height: "64px", width: "64px" }}>
-      <Image src="/projects/logos/portfolio_v2.png" layout="fill" objectFit="cover" />
+      <CustomImage src="/projects/logos/portfolio_v2.png" alt="logo" layout="fill" objectFit="cover" />
      </a>
     </Link>
     <div className="flex gap-md center-align">

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const CustomImage = (props) => {
  const [src, setSrc] = useState(props.src);
- return <Image {...props} src={src} alt="an image" onError={() => setSrc("/projects/unknown.png")} />;
+ return <Image {...props} src={src} alt={props.alt || ""} onError={() => setSrc("/projects/unknown.png")} />;
 };
 
 export default CustomImage;
