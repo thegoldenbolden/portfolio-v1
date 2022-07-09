@@ -1,48 +1,31 @@
-import Head from "next/head";
-import Script from "next/script";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
+import Link from "next/link";
 import Projects from "../components/Projects";
+import Skills from "../components/skills";
 
 const Home = () => {
-  return (
-    <>
-      <Head>
-        <title>Jacob | Web Developer</title>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f8d07a" />
-        <meta name="msapplication-TileColor" content="#f8d07a" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="description"
-          content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
-        />
-      </Head>
-      <Header />
-      <Hero />
-      <Projects />
-    </>
-  );
+ return (
+  <>
+   <section id="hero" className="flex column">
+    <div id="content">
+     <h1>Jacob Bolden </h1>
+     <h1>I make ideas a reality.</h1>
+     <p>
+      I'm a self-taught fullstack developer with a desire to create digital products that can be enjoyed by everyone.
+     </p>
+     <div className="flex gap-md">
+      <a href="mailto: jlbolden.pro@gmail.com" className={`glass contact`}>
+       Contact Me
+      </a>
+      <Link href="#featured">
+       <a>View Projects</a>
+      </Link>
+     </div>
+    </div>
+   </section>
+   <Skills />
+   <Projects />
+  </>
+ );
 };
 
 export default Home;

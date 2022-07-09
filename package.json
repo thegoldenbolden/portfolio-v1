@@ -1,12 +1,13 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": "true",
   "description": "My website portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start"
   },
   "repository": {
@@ -26,19 +27,19 @@
   },
   "homepage": "https://github.com/thegoldenbolden/portfolio#readme",
   "dependencies": {
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-icons": "^4.3.1",
-    "sass": "^1.52.1",
-    "sharp": "^0.30.5"
+    "next": "^12.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "sass": "^1.53.0",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
-    "@types/node": "^17.0.35",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
-    "eslint": "^8.16.0",
-    "eslint-config-next": "^12.1.6",
-    "typescript": "^4.6.4"
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.19.0",
+    "eslint-config-next": "^12.2.1",
+    "typescript": "^4.7.4"
   }
 }
