@@ -10,7 +10,9 @@ const Home = () => {
      <h1>Jacob Bolden </h1>
      <h1>I make ideas a reality.</h1>
      <p>
-      I'm a self-taught fullstack developer with a desire to create digital products that can be enjoyed by everyone.
+      {
+       "I'm a self-taught fullstack developer with a desire to create digital products that can be enjoyed by everyone."
+      }
      </p>
      <div className="flex gap-md">
       <a href="mailto: jlbolden.pro@gmail.com" className={`glass contact`}>
