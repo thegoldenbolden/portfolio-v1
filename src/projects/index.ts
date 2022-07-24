@@ -30,16 +30,6 @@ export default [
   image: "portfolio_v2",
  },
  {
-  name: "Noodle",
-  description: "A web app for the Noodle discord bot.",
-  tags: [],
-  banner: {
-   name: "upcoming",
-   color: ["gray", "black"],
-  },
-  image: "noodle",
- },
- {
   name: "Portfolio V1",
   description: "The 1st version of my portfolio.",
   repo: "https://github.com/thegoldenbolden/portfolio/tree/v1",
