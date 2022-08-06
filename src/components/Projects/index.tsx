@@ -9,10 +9,10 @@ const Projects = () => {
   <section id="featured" className="flex column gap-md center-align">
    <h1 style={{ alignSelf: "flex-start" }}>Featured Projects</h1>
    <div id="projects" className="flex center-align center gap-md">
-    {projects.map((project) => {
-     if (!project.banner) return;
+    {projects.map((project, i) => {
+     if (i > 2) return null;
      return (
-      <Fragment key={project.name}>
+      <Fragment key={i}>
        <Project project={project} />
       </Fragment>
      );

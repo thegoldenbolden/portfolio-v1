@@ -16,9 +16,17 @@ export default [
   name: "PokéBinder",
   description: "Find prices of any Pokémon card",
   live: "https://pokebinder.vercel.app",
+  repo: "https://github.com/thegoldenbolden/pokebinder",
   tags: ["Next", "Typescript", "Sass"],
-  banner: { name: "featured" },
   image: "pokebinder",
+ },
+ {
+  name: "Todos Buddy",
+  description: "A basic todo app.",
+  repo: "https://github.com/thegoldenbolden/todo-app",
+  live: "https://todosbuddy.netlify.com",
+  tags: ["Next", "Typescript", "Sass"],
+  image: "todo",
  },
  {
   name: "Portfolio V2",
@@ -26,7 +34,6 @@ export default [
   repo: "https://github.com/thegoldenbolden/portfolio",
   live: "https://jacobbolden.com",
   tags: ["Next", "Typescript", "Sass"],
-  banner: { name: "featured" },
   image: "portfolio_v2",
  },
  {

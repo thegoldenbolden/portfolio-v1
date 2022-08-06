@@ -7,20 +7,6 @@ import CustomImage from "../Image";
 const Project = ({ project }: { project: Project }) => {
  return (
   <div className="flex column card">
-   {project.banner && (
-    <span
-     {...(project.banner.color && {
-      style: {
-       color: project.banner.color[0],
-       background: project.banner.color[1],
-       outlineColor: project.banner.color[1],
-      },
-     })}
-     className="banner"
-    >
-     {project.banner.name}
-    </span>
-   )}
    {project.image && (
     <div className="site-wrapper">
      <CustomImage
