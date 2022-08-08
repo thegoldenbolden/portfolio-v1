@@ -13,7 +13,6 @@ export default [
   description: "Search for prices for any Pokémon card",
   live: "https://pokebinder.vercel.app",
   repo: "https://github.com/thegoldenbolden/pokebinder",
-  repo: "https://github.com/thegoldenbolden/pokebinder",
   tags: ["Next", "Typescript", "Sass"],
   image: "pokebinder",
  },
