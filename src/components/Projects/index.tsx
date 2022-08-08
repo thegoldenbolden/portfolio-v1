@@ -11,7 +11,7 @@ const Projects = () => {
    <div className="projects">
     {projects.slice(0, 3).map((project, i) => {
      return (
-      <Fragment key={project.name}>
+      <Fragment key={i}>
        <Project project={project} />
       </Fragment>
      );
