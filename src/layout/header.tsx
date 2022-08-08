@@ -27,10 +27,10 @@ const Header = () => {
      <Link href="/projects">
       <a {...(isActive("/projects") && { className: "active-link" })}>projects</a>
      </Link>
-     <Link target="_blank" href="/resume.pdf">
+     <Link target="_blank" rel="noreferrer noopener" href="/resume.pdf">
       <a>resume</a>
      </Link>
-     <Link target="_blank" href="mailto: jlbolden.pro@gmail.com">
+     <Link target="_blank" rel="noreferrer noopener" href="mailto: jlbolden.pro@gmail.com">
       <a>contact</a>
      </Link>
     </div>
@@ -43,22 +43,22 @@ const Header = () => {
 function MobileIcons({ isActive, toggle }) {
  return (
   <nav aria-label="navigation links" id="menu-icons">
-   <Link href="/">
+   <Link rel="noreferrer noopener" href="/">
     <a {...(isActive("/") && { className: "active-link" })}>
      <BsHouse />
     </a>
    </Link>
-   <Link href="/projects">
+   <Link rel="noreferrer noopener" href="/projects">
     <a {...(isActive("/projects") && { className: "active-link" })}>
      <BsGrid />
     </a>
    </Link>
-   <Link target="_blank" href="/resume.pdf">
+   <Link rel="noreferrer noopener" target="_blank" href="/resume.pdf">
     <a {...(isActive("/resume.pdf") && { className: "active-link" })}>
      <BsFilePdf />
     </a>
    </Link>
-   <Link target="_blank" href="mailto:jlbolden.pro@gmail.com">
+   <Link rel="noreferrer noopener" target="_blank" href="mailto:jlbolden.pro@gmail.com">
     <a>
      <MdMailOutline />
     </a>
