@@ -1,13 +1,10 @@
 $dark-bg: rgb(39, 39, 44);
-$light-bg: rgb(229, 246, 246);
 $light-bg: rgb(250, 250, 250);
 $dark-txt: white;
 $light-txt: $dark-bg;
-
-// $accent: rgb(116, 169, 138);
 $accent: rgb(116, 150, 150);
 $adjust-accent: adjust-color($color: $accent, $hue: 180, $saturation: 50%, $lightness: 10%);
-$text-shadow: 0 0 10px currentColor;
+$text-shadow: 0 0 100px currentColor;
 
 @function rem($px) {
  @return #{$px / 16}rem;
@@ -63,15 +60,8 @@ $text-shadow: 0 0 10px currentColor;
 
  #landing {
 
-  h1,
-  p {
-   text-shadow: $text-shadow;
-  }
- }
-
- section {
-  .heading {
-   text-shadow: $text-shadow;
+  h1 {
+   text-shadow: 0 0 100px currentColor;
   }
  }
 }
