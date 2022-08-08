@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { VscGithubAlt, VscLinkExternal, VscFolder } from "react-icons/vsc";
 
 import { Project } from "../../lib";

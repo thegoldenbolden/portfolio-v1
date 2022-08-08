@@ -1,8 +1,7 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.scss";
 import Layout from "../layout";
-import { ThemeContext, ThemeProvider } from "../context/ThemeContext";
-import { useContext, useEffect } from "react";
+import { ThemeProvider } from "../context/ThemeContext";
 
 function App({ Component, pageProps }: AppProps) {
  return (

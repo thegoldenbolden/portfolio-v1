@@ -1,5 +1,4 @@
 import { Fragment, useContext, useEffect } from "react";
-
 import projects from "../lib";
 import Project from "../components/projects/project";
 import { ThemeContext } from "../context/ThemeContext";
