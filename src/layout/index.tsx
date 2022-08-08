@@ -1,7 +1,5 @@
 import Head from "next/head";
-import { useContext } from "react";
 import Socials from "../components/socials";
-import { ThemeContext } from "../context/ThemeContext";
 import Footer from "./footer";
 import Header from "./header";
 
@@ -9,7 +7,7 @@ const Layout = ({ children }) => {
  return (
   <>
    <Head>
-    <title>Jacob | Web Developer</title>
+    <title>Jacob Bolden</title>
     <meta charSet="UTF-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

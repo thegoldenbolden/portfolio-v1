@@ -1,4 +1,3 @@
-import { FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
 import Socials from "../components/socials";
 
 const Footer = () => {
