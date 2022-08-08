@@ -1,20 +1,31 @@
-import { Fragment } from "react";
+import { Fragment, useContext, useEffect } from "react";
 
-import projects from "../projects";
-import Project from "../components/Projects/project";
+import projects from "../lib";
+import Project from "../components/projects/project";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Projects = () => {
+ const { theme } = useContext(ThemeContext);
+
+ useEffect(() => {
+  if (document) {
+   const body = document.body;
+   body.classList.add(theme);
+   body.classList.remove(theme == "dark" ? "light" : "dark");
+  }
+ }, [theme]);
+
  return (
-  <div id="all-p" className="flex gap-md center center-align">
-   <h1 className="ta" style={{ marginTop: "1em", justifySelf: "center", width: "100%" }}>
-    All Projects
-   </h1>
-   {projects.map((p) => (
-    <Fragment key={p.name}>
-     <Project project={p} />
-    </Fragment>
-   ))}
-  </div>
+  <section id="featured">
+   <h1 className="heading">All Projects</h1>
+   <div className="projects">
+    {projects.map((p) => (
+     <Fragment key={p.name}>
+      <Project project={p} />
+     </Fragment>
+    ))}
+   </div>
+  </section>
  );
 };
 

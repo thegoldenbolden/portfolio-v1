@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { Fragment } from "react";
 
-import Project from "../Projects/project";
-import projects from "../../projects";
+import Project from "./project";
+import projects from "../../lib";
 
 const Projects = () => {
  return (
-  <section id="featured" className="flex column gap-md center-align">
-   <h1 style={{ alignSelf: "flex-start" }}>Featured Projects</h1>
-   <div id="projects" className="flex center-align center gap-md">
-    {projects.map((project) => {
-     if (!project.banner) return;
+  <section id="featured">
+   <h1 className="heading">Featured Projects</h1>
+   <div className="projects">
+    {projects.slice(0, 3).map((project, i) => {
      return (
       <Fragment key={project.name}>
        <Project project={project} />

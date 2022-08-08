@@ -1,7 +1,9 @@
 import Head from "next/head";
-import Socials from "../socials";
-import Footer from "./Footer";
-import Header from "./Header";
+import { useContext } from "react";
+import Socials from "../components/socials";
+import { ThemeContext } from "../context/ThemeContext";
+import Footer from "./footer";
+import Header from "./header";
 
 const Layout = ({ children }) => {
  return (
@@ -23,8 +25,8 @@ const Layout = ({ children }) => {
      content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
     />
    </Head>
-   <Socials />
    <div id="container">
+    <Socials />
     <Header />
     {children}
     <Footer />
