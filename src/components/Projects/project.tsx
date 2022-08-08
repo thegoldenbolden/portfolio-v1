@@ -13,12 +13,12 @@ const Project = ({ project }: { project: Project }) => {
     </div>
     <div>
      {project.live && (
-      <a href={project.live} aria-label="view site" rel="noreferrer nopener">
+      <a href={project.live} target="_blank" aria-label="view site" rel="noreferrer nopener">
        <VscLinkExternal size={24} />
       </a>
      )}
      {project.repo && (
-      <a href={project.repo} aria-label="view source code" rel="noreferrer nopener">
+      <a href={project.repo} target="_blank" aria-label="view source code" rel="noreferrer nopener">
        <VscGithubAlt size={24} />
       </a>
      )}

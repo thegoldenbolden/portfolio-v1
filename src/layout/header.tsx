@@ -27,10 +27,10 @@ const Header = () => {
      <Link href="/projects">
       <a {...(isActive("/projects") && { className: "active-link" })}>projects</a>
      </Link>
-     <Link href="/resume.pdf">
+     <Link target="_blank" href="/resume.pdf">
       <a>resume</a>
      </Link>
-     <Link href="mailto: jlbolden.pro@gmail.com">
+     <Link target="_blank" href="mailto: jlbolden.pro@gmail.com">
       <a>contact</a>
      </Link>
     </div>
@@ -53,12 +53,12 @@ function MobileIcons({ isActive, toggle }) {
      <BsGrid />
     </a>
    </Link>
-   <Link href="/resume.pdf">
+   <Link target="_blank" href="/resume.pdf">
     <a {...(isActive("/resume.pdf") && { className: "active-link" })}>
      <BsFilePdf />
     </a>
    </Link>
-   <Link href="mailto:jlbolden.pro@gmail.com">
+   <Link target="_blank" href="mailto:jlbolden.pro@gmail.com">
     <a>
      <MdMailOutline />
     </a>
