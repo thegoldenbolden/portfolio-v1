@@ -53,7 +53,7 @@ function About() {
    <div className="about-content">
     <div>
      <p>
-      Bonjour, mon ami. I graduated from University of Memphis in 2020 with a bachelors in health science, but
+      Bonjour, mes copines. my name is Jacob and I graduated from University of Memphis in 2020 with a bachelors in health science, but
       eventually decided to stay true to my younger self and pursue a career in <strong>graphic design</strong> and{" "}
       <strong>web development</strong>.
      </p>
