@@ -309,6 +309,7 @@ h1 {
    &:first-child {
     border: 2px solid $accent;
     border-radius: 3px;
+    color: $dark-bg;
     background: $accent;
 
     &:hover {

@@ -17,6 +17,13 @@ export default [
   image: "pokebinder",
  },
  {
+  name: "Noodle Bot",
+  description: "Web app for Noodle discord bot, includes Versus where you pit two things against each other and vote on the winner.",
+  live: "https://noodlebot.netlify.app",
+  tags: ["Next", "Prisma", "Postgres"],
+  image: "noodle",
+ },
+ {
   name: "Todos Buddy",
   description: "A basic todo app",
   live: "https://todosbuddy.netlify.com",
@@ -25,14 +32,12 @@ export default [
   image: "todo",
  },
  {
-  name: "Portfolio",
+  name: "Portfolio V2",
   description: "The website you are currently on.",
-  repo: "https://github.com/thegoldenbolden/portfolio",
-  live: "https://jacobbolden.com",
+  repo: "https://github.com/thegoldenbolden/portfolio/tree/v2",
   tags: ["Next", "Typescript", "Sass"],
   image: "portfolio_v2",
  },
-
  {
   name: "Portfolio V1",
   description: "The 1st version of my portfolio.",
