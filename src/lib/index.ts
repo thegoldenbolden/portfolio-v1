@@ -45,7 +45,6 @@ export default [
   tags: ["Next", "Typescript", "CSS"],
   image: "portfolio_v1",
  },
-
  {
   name: "Trivia Buddy",
   description: "A trivia game using OpenTDB api.",
@@ -53,14 +52,5 @@ export default [
   image: "trivia",
   repo: "https://github.com/thegoldenbolden/trivia",
   live: "https://thegoldenbolden.github.io/trivia",
- },
-
- {
-  description: "A pokedex using PokéAPI.",
-  name: "Pokédex",
-  tags: ["Javascript", "HTML5", "CSS"],
-  repo: "https://github.com/thegoldenbolden/pokedex",
-  live: "https://thegoldenbolden.github.io/pokedex",
-  image: "pokedex",
  },
 ] as Project[];
