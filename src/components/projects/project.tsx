@@ -27,7 +27,7 @@ const Project = ({ project }: { project: Project }) => {
    <div className="description">
     <p>{project.description}</p>
     {project.image && (
-     <CustomImage src={`/projects/${project.image}.webp`} alt={`a screenshot of the site "${project.name}"`} />
+     <CustomImage src={`/projects/${project.image}`} alt={`a screenshot of the site "${project.name}"`} />
     )}
    </div>
    <ul className="tags">
