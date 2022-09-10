@@ -1,11 +1,11 @@
 [[redirects]]
-from = "https://jacobbolden.netlify.app/"
+from = "https://*.netlify.app/"
 to = "https://jacobbolden.com/"
 status = 301
 force = true
 
 [[redirects]]
-from = "https://jacobbolden.netlify.app/projects"
+from = "https://*.netlify.app/projects"
 to = "https://jacobbolden.com/projects"
 status = 301
 force = true
