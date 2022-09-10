@@ -24,6 +24,13 @@ export default [
   image: "noodle.png",
  },
  {
+  name: "Brew Buddy",
+  description: "Find the nearest breweries near you.",
+  repo: "https://github.com/thegoldenbolden/brewery",
+  tags: ["Next", "Typescript", "CSS"],
+  image: "brewery.png",
+ },
+ {
   name: "Todos Buddy",
   description: "A todo app to keep track of your daily needs.",
   live: "https://todosbuddy.netlify.com",
