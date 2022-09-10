@@ -67,7 +67,7 @@ function About() {
      </p>
     </div>
     <div>
-     <CustomImage src="/avatar.png" height={250} width={250} />
+     <CustomImage alt="avatar" src="/avatar.png" height={250} width={250} />
     </div>
    </div>
   </section>
