@@ -1,35 +1,67 @@
-import { useContext } from "react";
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMusic } from "react-icons/fi";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { ThemeContext } from "../context/ThemeContext";
+import {
+ TbBrandLinkedin as LinkedIn,
+ TbBrandSpotify as Music,
+ TbBrandGithub as Github,
+ TbBrandTwitter as Twitter,
+ TbBrandGmail as Mail,
+ TbExternalLink,
+} from "react-icons/tb";
 
 const Socials = () => {
- const { toggle } = useContext(ThemeContext);
-
+ const className = "p-1 rounded ";
  return (
-  <nav id="socials" aria-label="social-links">
-   <a aria-label="contact" target="_blank" rel="noreferrer noopener" href="mailto: jlbolden.pro@gmail.com">
-    <FiMail size={24} />
-   </a>
-   <a aria-label="twitter" target="_blank" rel="noreferrer noopener" href="https://twitter.com/thagoldenbolden">
-    <FiTwitter size={24} />
-   </a>
-   <a aria-label="github" target="_blank" rel="noreferrer noopener" href="https://github.com/thegoldenbolden">
-    <FiGithub size={24} />
-   </a>
-   <a aria-label="linkedin" target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/jbolden9">
-    <FiLinkedin size={24} />
-   </a>
-   <a
-    aria-label="spotify"
-    target="_blank"
-    rel="noreferrer noopener"
-    href="https://open.spotify.com/user/thegoldenbolden"
-   >
-    <FiMusic size={24} />
-   </a>
-   <MdOutlineWbSunny aria-label="dark mode" className="theme icon" size={24} onClick={toggle} />
-  </nav>
+  <div className="flex flex-wrap items-center justify-between flex-grow gap-2 text-4xl rounded text-complement sm:text-5xl md:text-6xl">
+   <div className={"flex flex-col items-center justify-center"}>
+    <a
+     href="https://linkedin.com/in/jbolden9"
+     target="_blank"
+     rel="noreferrer noopener"
+     className={className + "icon-1 lg:p-1"}
+    >
+     <LinkedIn className="lg:p-1" />
+    </a>
+    <span className="text-xs sm:text-base">LinkedIn</span>
+   </div>
+   <div className="flex flex-col items-center justify-center">
+    <a
+     href="https://twitter.com/thagoldenbolden"
+     target="_blank"
+     rel="noreferrer noopener"
+     className={className + "icon-2"}
+    >
+     <Twitter className="lg:p-1" />
+    </a>
+    <span className="text-xs sm:text-base">Twitter</span>
+   </div>
+   <div className="flex flex-col items-center justify-center">
+    <a
+     href="https://github.com/thegoldenbolden"
+     target="_blank"
+     rel="noreferrer noopener"
+     className={className + "icon-3"}
+    >
+     <Github className="lg:p-1" />
+    </a>
+    <span className="text-xs sm:text-base">Github</span>
+   </div>
+   <div className="flex flex-col items-center justify-center">
+    <a
+     href="https://open.spotify.com/user/thegoldenbolden"
+     target="_blank"
+     rel="noreferrer noopener"
+     className={className + "icon-4"}
+    >
+     <Music className="lg:p-1" />
+    </a>
+    <span className="text-xs sm:text-base">Spotify</span>
+   </div>
+   <div className="flex flex-col items-center justify-center">
+    <a href="mailto:jlbolden9@gmail.com" target="_blank" rel="noreferrer noopener" className={className + "icon-5"}>
+     <Mail className="lg:p-1" />
+    </a>
+    <span className="text-xs sm:text-base">Contact</span>
+   </div>
+  </div>
  );
 };
 

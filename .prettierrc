@@ -16,6 +16,5 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "filepath": "c:\\Users\\jlbol\\desktop\\portfolio\\src\\pages\\index.tsx",
   "parser": "typescript"
 }
