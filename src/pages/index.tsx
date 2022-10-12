@@ -112,10 +112,21 @@ const Home: NextPage = () => {
   <>
    <Head>
     <title>Jacob Bolden</title>
-    <meta name="description" content="Jacob Bolden | Web Developer" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta charSet="UTF-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f8d07a" />
+    <meta name="msapplication-TileColor" content="#f8d07a" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+     name="description"
+     content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
+    />
    </Head>
-
    <div className="container flex flex-col justify-between">
     <header className="w-full p-2 order-last sticky shadow shadow-black sm:shadow-none sm:static z-[10] sm:z-0 sm:bg-transparent bg-primary bottom-0 sm:order-first">
      <Socials />
