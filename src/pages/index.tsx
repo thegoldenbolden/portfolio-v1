@@ -36,7 +36,7 @@ const projects: Project[] = [
  {
   id: "bigbrain",
   name: "Big Brain",
-  site: "https://thegoldenbolden.github.io/triviabuddy/",
+  site: "https://thegoldenbolden.github.io/trivia/",
   github: "https://github.com/thegoldenbolden/trivia",
   description: "A trivia app.",
   tags: ["HTML5", "Javascript", "CSS3"],
