@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { Dispatch, useEffect, SetStateAction, useState, Fragment } from "react";
-import { TbExternalLink, TbBrandGithub } from "react-icons/tb";
 
 import useMobile from "../hooks/useMobile";
 import Skills from "../components/skills";
@@ -13,7 +12,6 @@ type Project = {
  description: string;
  site?: string;
  github?: string;
- tags?: string[];
 };
 
 const projects: Project[] = [
@@ -22,33 +20,30 @@ const projects: Project[] = [
   name: "PokéBinder",
   site: "https://pokebinder.vercel.app",
   github: "https://github.com/thegoldenbolden/pokebinder",
-  description: "A web application for users to search for Pokémon cards and find places to buy or sell them.",
-  tags: ["Typescript", "Next", "Sass"],
+  description:
+   "A web application for users to search for Pokémon cards and find places to buy or sell them.\nThis site was built using Next, Typescript and Sass.",
  },
  {
   id: "socialite",
   name: "Socialite",
   github: "https://github.com/thegoldenbolden/chatroom",
-  tags: ["Next", "Socket.IO", "Tailwind", "Sass"],
   description:
-   "An app using Socket.IO and Next.js to create a chat app where users can join rooms and talk to one another.",
+   "An app - built with Next, Socket.IO, Tailwind and Sass - where users can join rooms and talk to one another.\nCurrently, there is no live version.",
  },
  {
-  id: "bigbrain",
-  name: "Big Brain",
-  site: "https://thegoldenbolden.github.io/trivia/",
-  github: "https://github.com/thegoldenbolden/trivia",
-  description: "A trivia app.",
-  tags: ["HTML5", "Javascript", "CSS3"],
+  id: "noodle",
+  name: "Noodle",
+  site: "https://noodlebot.netlify.app",
+  description:
+   "An app utilizing Next, Prisma, Postgres, and Sass that lets users choose who would win in a hypothetical fight.\nThe source code is currently private.",
  },
  {
   id: "noodleats",
   name: "Noodleats",
   site: "https://thegoldenbolden.github.io/noodleats/",
   github: "https://github.com/thegoldenbolden/noodleats",
-  tags: ["Next", "Tailwind", "Sass"],
   description:
-   "A landing page for an Ubereats and DoorDash style delivery company that primarily delivers dishes invovling noodles.",
+   "A landing page for a DoorDash / UberEats style delivery company that delivers dishes involving noodles.\nThis project uses Next, Sass, and Tailwind.",
  },
 ];
 
@@ -56,7 +51,7 @@ const about: Project = {
  id: "about",
  name: "",
  description:
-  "My name is Jacob Bolden, I'm a fullstack developer with a focus on building web applications using a mobile-first approach.\nI'm open to job opportunities where I can contribute, learn, and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.",
+  "Hi, I'm a self-taught fullstack developer with a focus on building web applications using a mobile-first approach.\nI'm passionate about creating digital products that can be enjoyed by everyone.",
 };
 
 const Home: NextPage = () => {
@@ -64,6 +59,7 @@ const Home: NextPage = () => {
  const [prefersReduced, setPrefersReduced] = useState(false);
  const isMobile = useMobile();
 
+ // Add mouse styling depending on user device and animation preference.
  useEffect(() => {
   if (isMobile) return;
   if (prefersReduced) return;
@@ -78,10 +74,10 @@ const Home: NextPage = () => {
    const py = e.pageY - offsetHeight / 2;
 
    // change color of all sides
-   const one = `0px 1px 10px rgba(${px % 360}, 30, 30, 0.809)`;
-   const two = `0px -1px 10px rgb(59, ${py % 360}, 88)`;
-   const three = `-1px 0px 10px rgb(24, 132, ${px + ((offsetWidth * 2) % 360)})`;
-   const four = `1px 0px 10px rgb(${py + ((offsetWidth * 2) % 360)}, 72, 213)`;
+   let one = `0px 1px 10px rgba(${px % 360}, 30, 30, 0.809)`;
+   let two = `0px -1px 10px rgb(59, ${py % 360}, 88)`;
+   let three = `-1px 0px 10px rgb(24, 132, ${px + ((offsetWidth * 2) % 360)})`;
+   let four = `1px 0px 10px rgb(${py + ((offsetWidth * 2) % 360)}, 72, 213)`;
 
    div.style.rotate = `${(px + py) % 360}deg`;
    div.style.top = py + "px";
@@ -96,6 +92,7 @@ const Home: NextPage = () => {
   };
  }, [isMobile, prefersReduced]);
 
+ // Add animation based on user preference.
  useEffect(() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   setPrefersReduced(reduce.matches);
@@ -111,7 +108,7 @@ const Home: NextPage = () => {
  return (
   <>
    <Head>
-    <title>Jacob Bolden</title>
+    <title>Jacob | Web Developer</title>
     <meta charSet="UTF-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -132,12 +129,26 @@ const Home: NextPage = () => {
      <Socials />
     </header>
     <main className="p-2">
-     <div className="flex flex-wrap justify-between gap-16">
+     <p>Welcome, I&apos;m Jacob</p>
+     <div className="flex flex-wrap justify-between gap-8 md:gap-16">
       <Content content={current} setContent={setCurrent} />
       <Showcase content={current} setContent={setCurrent} />
      </div>
     </main>
-    <footer className="w-full p-2 text-center">Designed & Built by Jacob Bolden</footer>
+    <footer className="flex flex-col items-center w-full p-2">
+     <p>Designed & Built by Jacob Bolden</p>
+     <a
+      title="Contact Me"
+      className="text-md gradient-text sm:project"
+      href="mailto:jlbolden9@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
+      {"jlbolden9@gmail.com".split("").map((r, i) => {
+       return <span key={i}>{r}</span>;
+      })}
+     </a>
+    </footer>
     {!isMobile && !prefersReduced && (
      <div id="mouse" className="fixed bg-transparent mouse w-[50px] h-[50px] rounded-full"></div>
     )}
@@ -147,53 +158,63 @@ const Home: NextPage = () => {
 };
 
 function Content({ content, setContent }: { content: Project; setContent: Dispatch<SetStateAction<Project>> }) {
- const { name, description, tags, site, github } = content;
- const hdClassName = name == "" ? "text-complement" : "text-complement/25 hover:text-complement focus:text-complement";
+ const { name, description, site, github } = content;
+ const hdClassName = name == "" ? "text-white" : "text-white/25 hover:text-white focus:text-white";
 
  return (
-  <div className="flex relative flex-col gap-4 text-base w-full min-h-[50vh] sm:min-h-min lg:max-w-[60%]">
-   <h2 className="text-xl xs:text-2xl sm:w-max">
-    <span role="button" tabIndex={0} className={hdClassName} onClick={(e) => setContent(about)}>
-     Developer
+  <div className="flex relative flex-col gap-4 text-base w-full min-h-[40vh] md:max-w-[50%] lg:max-w-[60%]">
+   <h2 className="text-2xl sm:text-3xl sm:w-max">
+    <span
+     role="button"
+     tabIndex={0}
+     className={hdClassName}
+     onClick={(e) => {
+      setContent(about);
+      const ul = document.getElementsByTagName("ul")?.item(0);
+      if (ul) {
+       ul.style.backgroundSize = "1px 0px";
+      }
+     }}
+    >
+     About
     </span>
     {name && (
      <>
-      <span className="hidden text-complement/25 sm:inline"> / Projects</span>
-      <span className="text-complement"> / {name}</span>
+      <span className="hidden text-white/25 sm:inline"> / Projects</span>
+      <span className="text-white"> / {name}</span>
      </>
     )}
    </h2>
-   <div className="text-md xs:text-lg md:text-xl">
+   <div className="text-lg sm:text-xl">
     {description.split("\n").map((description, i) => {
      return (
       <Fragment key={i}>
-       {(i + 1) % 2 == 0 && <br key={i} />}
-       <p key={i}>{description}</p>
+       {(i + 1) % 2 == 0 && <br />}
+       <p>{description}</p>
       </Fragment>
      );
     })}
    </div>
-   <div className="flex flex-wrap items-end flex-grow gap-2 p-2 flex-between">
-    {tags && (
-     <div className="flex flex-wrap items-center flex-grow gap-2">
-      {tags.map((tag) => (
-       <span key={tag}>{tag}</span>
-      ))}
-     </div>
+   <div className="flex flex-wrap gap-2">
+    {site && (
+     <a
+      href={site}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="border-b-2 border-b-solid border-b-white/25 hover:border-b-white"
+     >
+      View Site
+     </a>
     )}
-    {(site || github) && (
-     <div className="flex flex-wrap items-center justify-end gap-2 text-2xl sm:text-3xl">
-      {site && (
-       <a href={site} target="_blank" rel="noreferrer noopener" className="hover:text-blue-200">
-        <TbExternalLink />
-       </a>
-      )}
-      {github && (
-       <a href={github} target="_blank" rel="noreferrer noopener" className="hover:text-blue-200">
-        <TbBrandGithub />
-       </a>
-      )}
-     </div>
+    {github && (
+     <a
+      href={github}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="border-b-2 border-b-solid border-b-white/25 hover:border-b-white"
+     >
+      View Code
+     </a>
     )}
    </div>
   </div>
@@ -202,41 +223,61 @@ function Content({ content, setContent }: { content: Project; setContent: Dispat
 
 function Showcase({ content, setContent }: { content: Project; setContent: Dispatch<SetStateAction<Project>> }) {
  return (
-  <div className="flex flex-col sm:flex-shrink gap-4 text-base w-full lg:w-[30%]">
-   <h2 className="text-xl xs:text-2xl">Featured / Projects</h2>
-   <div className="flex flex-col justify-between flex-grow gap-4 text-md xs:text-lg items-between md:text-xl">
+  <div className="flex flex-col sm:flex-shrink gap-4 text-base w-full md:w-[40%] lg:w-[30%]">
+   <h2 className="text-2xl sm:text-3xl">Featured / Projects</h2>
+   <div className="flex flex-col justify-between flex-grow gap-4 items-between text-md xs:text-lg md:text-lg">
     <div className="flex flex-wrap justify-between gap-2">
      <ul className="flex flex-col ml-2 flex-grow border-white/25 border-l-[.5px] justify-between">
       {projects.map((project, i) => {
        let active = content.name == project.name ? " text-white" : "";
+
        return (
-        <li className={`flex flex-row items-center justify-between gap-2 px-4`} key={project.name}>
-         <div className="flex flex-row justify-between gap-2 text-white/25 hover:text-white focus-within:text-white focus:text-white">
-          <span className={"font-sans text-sm font-bold " + active}>0{i + 1}.&nbsp;</span>
-          <button
-           className="sm:project text-complement"
-           onClick={() => {
-            setContent(project);
-            window.scrollTo(0, 0);
-           }}
-          >
-           {project.name.split("").map((l, i) => {
-            if (l == " ") {
-             return <span key={i}>&nbsp;</span>;
-            }
-            return <span key={i}>{l}</span>;
-           })}
-          </button>
-         </div>
+        <li
+         className={`min-h-[25%] w-max flex flex-row items-center px-4 gap-2 text-white/25 hover:text-white focus-within:text-white focus:text-white`}
+         key={project.name}
+        >
+         <span className={"font-sans text-sm font-bold " + active}>0{i + 1}.&nbsp;</span>
+         <button
+          className="self-end text-white sm:project"
+          onClick={() => {
+           setContent(project);
+           window.scrollTo(0, 0);
+           const ul = document.getElementsByTagName("ul")?.item(0);
+           if (!ul) return;
+           const size = (i + 1) * 25;
+           ul.style.backgroundSize = `1px ${size * 4}%`;
+          }}
+         >
+          {project.name.split("").map((l, i) => {
+           return <span key={i}>{l == " " ? <>&nbsp;</> : l}</span>;
+          })}
+         </button>
         </li>
        );
       })}
      </ul>
      <Skills />
     </div>
-    <button className="w-full p-2 rounded btn">
-     <span>View Resume</span>
-    </button>
+    <div className="flex flex-wrap w-full gap-4 rounded">
+     <a
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="View Resume"
+      className="flex-grow p-2 text-center border-2 border-solid rounded border-white/25 hover:border-white focus:border-white"
+     >
+      Resume
+     </a>
+     <a
+      title="Contact Me"
+      className="flex-grow p-2 text-center border-2 border-solid rounded border-white/25 hover:border-white focus:border-white"
+      href="mailto:jlbolden9@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
+      Contact
+     </a>
+    </div>
    </div>
   </div>
  );
