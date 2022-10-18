@@ -1,35 +1,62 @@
-import { useContext } from "react";
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMusic } from "react-icons/fi";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { ThemeContext } from "../context/ThemeContext";
+import {
+ TbBrandLinkedin as LinkedIn,
+ TbBrandSpotify as Music,
+ TbBrandGithub as Github,
+ TbBrandTwitter as Twitter,
+ TbBrandGmail as Mail,
+ TbExternalLink,
+} from "react-icons/tb";
 
 const Socials = () => {
- const { toggle } = useContext(ThemeContext);
-
+ const className = "p-1 rounded ";
  return (
-  <nav id="socials" aria-label="social-links">
-   <a aria-label="contact" target="_blank" rel="noreferrer noopener" href="mailto: jlbolden.pro@gmail.com">
-    <FiMail size={24} />
-   </a>
-   <a aria-label="twitter" target="_blank" rel="noreferrer noopener" href="https://twitter.com/thagoldenbolden">
-    <FiTwitter size={24} />
-   </a>
-   <a aria-label="github" target="_blank" rel="noreferrer noopener" href="https://github.com/thegoldenbolden">
-    <FiGithub size={24} />
-   </a>
-   <a aria-label="linkedin" target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/jbolden9">
-    <FiLinkedin size={24} />
-   </a>
+  <div className="flex flex-wrap items-center justify-between flex-grow gap-2 text-4xl rounded text-complement sm:text-5xl md:text-6xl">
    <a
-    aria-label="spotify"
+    title="LinkedIn"
+    href="https://linkedin.com/in/jbolden9"
     target="_blank"
     rel="noreferrer noopener"
-    href="https://open.spotify.com/user/thegoldenbolden"
+    className={className + "icon-1 lg:p-1"}
    >
-    <FiMusic size={24} />
+    <LinkedIn className="lg:p-1" />
    </a>
-   <MdOutlineWbSunny aria-label="dark mode" className="theme icon" size={24} onClick={toggle} />
-  </nav>
+   <a
+    title="Twitter"
+    href="https://twitter.com/thagoldenbolden"
+    target="_blank"
+    rel="noreferrer noopener"
+    className={className + "icon-2"}
+   >
+    <Twitter className="lg:p-1" />
+   </a>
+   <a
+    title="Github"
+    href="https://github.com/thegoldenbolden"
+    target="_blank"
+    rel="noreferrer noopener"
+    className={className + "icon-3"}
+   >
+    <Github className="lg:p-1" />
+   </a>
+   <a
+    title="Spotify"
+    href="https://open.spotify.com/user/thegoldenbolden"
+    target="_blank"
+    rel="noreferrer noopener"
+    className={className + "icon-4"}
+   >
+    <Music className="lg:p-1" />
+   </a>
+   <a
+    title="Contact"
+    href="mailto:jlbolden9@gmail.com"
+    target="_blank"
+    rel="noreferrer noopener"
+    className={className + "icon-5"}
+   >
+    <Mail className="lg:p-1" />
+   </a>
+  </div>
  );
 };
 
