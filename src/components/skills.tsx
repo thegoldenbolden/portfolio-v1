@@ -1,72 +1,29 @@
+const skills = [
+ "Next",
+ "React",
+ "Javascript",
+ "Typescript",
+ "Node",
+ "HTML5",
+ "CSS3",
+ "Sass",
+ "Tailwind",
+ "Figma",
+ "Postgres",
+ "Prisma",
+ "Git",
+ "Heroku",
+ "Netlify",
+ "Vercel",
+];
+
 const Skills = () => {
  return (
-  <div className="flex flex-col justify-between min-w-[5rem] text-sm xs:w-min marquee">
-   <div className="flex flex-col items-center marquee-inner">
-    <span>Next</span>
-    <span>React</span>
-    <span>Javascript</span>
-    <span>Typescript</span>
-    <span>Node</span>
-    <span>HTML5</span>
-    <span>CSS3</span>
-    <span>Tailwind</span>
-    <span>Sass</span>
-    <span>Figma</span>
-    <span>Postgres</span>
-    <span>Prisma</span>
-    <span>Git</span>
-    <span>Heroku</span>
-    <span>Netlify</span>
-    <span>Vercel</span>
-    {/**/}
-    <span>Next</span>
-    <span>React</span>
-    <span>Javascript</span>
-    <span>Typescript</span>
-    <span>Node</span>
-    <span>HTML5</span>
-    <span>CSS3</span>
-    <span>Tailwind</span>
-    <span>Sass</span>
-    <span>Figma</span>
-    <span>Postgres</span>
-    <span>Prisma</span>
-    <span>Git</span>
-    <span>Heroku</span>
-    <span>Netlify</span>
-    <span>Vercel</span>
-    <span>Next</span>
-    <span>React</span>
-    <span>Javascript</span>
-    <span>Typescript</span>
-    <span>Node</span>
-    <span>HTML5</span>
-    <span>CSS3</span>
-    <span>Tailwind</span>
-    <span>Sass</span>
-    <span>Figma</span>
-    <span>Postgres</span>
-    <span>Prisma</span>
-    <span>Git</span>
-    <span>Heroku</span>
-    <span>Netlify</span>
-    <span>Vercel</span>
-    <span>Next</span>
-    <span>React</span>
-    <span>Javascript</span>
-    <span>Typescript</span>
-    <span>Node</span>
-    <span>HTML5</span>
-    <span>CSS3</span>
-    <span>Tailwind</span>
-    <span>Sass</span>
-    <span>Figma</span>
-    <span>Postgres</span>
-    <span>Prisma</span>
-    <span>Git</span>
-    <span>Heroku</span>
-    <span>Netlify</span>
-    <span>Vercel</span>
+  <div id="skills" className="flex justify-between py-2 text-sm rounded marquee">
+   <div className="flex items-center marquee-inner">
+    {[...skills, ...skills, ...skills, ...skills].map((s, i) => {
+     return <span key={i}>{s}</span>;
+    })}
    </div>
   </div>
  );

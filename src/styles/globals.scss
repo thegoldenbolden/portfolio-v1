@@ -1,11 +1,12 @@
 @use "sass:list";
-@import url("https://fonts.googleapis.com/css2?family=Nixie+One&family=Raleway:wght@300;400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
 
 @layer components {
+ $rounded: theme("borderRadius.DEFAULT");
  $colors: #0a66c2,
   #1d9bf0,
   #171515,
@@ -17,30 +18,38 @@
   height: 100vh;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  gap: theme("gap.4");
+  flex-direction: column;
+  justify-content: space-between;
+
+  &::after {
+   position: absolute;
+   content: "";
+   bottom: 0;
+   left: 0;
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+  }
  }
 
  @for $i from 1 through 5 {
   .icon-#{$i} {
-   background: theme("colors.primary");
    position: relative;
-
-   @media (prefers-reduced-motion: no-preference) {
-    transition: all ease-in-out 1s;
-   }
 
    &::before {
     position: absolute;
     content: "";
-    background: theme("colors.primary");
     height: 0px;
     width: 100%;
     left: 0;
     bottom: 0;
-    border-radius: .25rem;
-    box-shadow: inset 0 2px 4px rgba(0 0 0 / .5);
+    border-radius: $rounded;
+    box-shadow: inset 0 2px 4px theme("colors.dark");
 
     @media (prefers-reduced-motion: no-preference) {
-     transition: all ease-in-out 1s;
+     transition: height ease-in-out 1s
     }
    }
 
@@ -49,7 +58,7 @@
     color: white;
 
     @media (prefers-reduced-motion: no-preference) {
-     border-radius: .25rem;
+     border-radius: $rounded;
     }
 
     &::before {
@@ -57,13 +66,17 @@
      position: absolute;
      background: list.nth($list: $colors, $n: $i);
      width: 100%;
-     box-shadow: inset 0 2px 4px rgba(0 0 0 / .5);
+     box-shadow: inset 0 2px 4px theme("colors.dark");
      height: 100%;
 
      @media (prefers-reduced-motion: no-preference) {
-      border-radius: .25rem;
+      border-radius: $rounded;
      }
     }
+   }
+
+   @media (prefers-reduced-motion: no-preference) {
+    transition: height ease-in-out 1s
    }
   }
  }
@@ -99,46 +112,18 @@
   }
  }
 
- #mouse {
-  $br: .25rem;
-  border-radius: $br;
-  mix-blend-mode: exclusion;
-  pointer-events: none;
-
-  &::after {
-   position: absolute;
-   content: "";
-   border-radius: $br;
-   height: 25%;
-   width: 25%;
-   top: -10%;
-   left: -10%;
-   box-shadow: inherit;
-  }
-
-  &::before {
-   position: absolute;
-   content: "";
-   border-radius: $br;
-   height: 40%;
-   width: 40%;
-   right: -20%;
-   bottom: -20%;
-   box-shadow: inherit;
-  }
- }
-
  .marquee {
   position: relative;
   overflow: hidden;
-  height: 150px;
+  height: max-content;
+  box-shadow: -1px -1px 3px rgba(0, 0, 0, .25), 1px 1px 3px rgba(0, 0, 0, .25);
   --offset: 20vw;
   --move-initial: calc(-25% + var(--offset));
   --move-final: calc(-50% + var(--offset));
 
   .marquee-inner {
    position: relative;
-   transform: translate3d(0, var(--move-initial), 0);
+   transform: translate3d(var(--move-initial), 0, 0);
    animation: marquee 20s linear infinite;
    animation-play-state: running;
    gap: 1rem;
@@ -149,11 +134,11 @@
 
    @keyframes marquee {
     0% {
-     transform: translate3d(0, var(--move-initial), 0);
+     transform: translate3d(var(--move-initial), 0, 0);
     }
 
     100% {
-     transform: translate3d(0, var(--move-final), 0);
+     transform: translate3d(var(--move-final), 0, 0);
     }
    }
 
@@ -166,9 +151,28 @@
  .gradient-text {
   width: max-content;
   color: transparent;
-  background-image: linear-gradient(to right, rgb(242, 131, 196), rgb(156, 239, 204), rgb(148, 187, 245));
+  background-image: linear-gradient(to right, hsl(325, 91%, 73%), hsl(155, 96%, 55%), hsl(216, 93%, 77%));
   background-clip: text;
   font-weight: bold;
+
+  &:hover,
+  &:focus {
+   animation: move 40s linear infinite forwards;
+
+   @media (prefers-reduced-motion: no-preference) {
+    animation: move 3s linear infinite forwards;
+   }
+  }
+
+  @keyframes move {
+   0% {
+    background-position-x: 0;
+   }
+
+   100% {
+    background-position-x: calc(1em * 20.5);
+   }
+  }
  }
 
  @media (prefers-reduced-motion: reduce) {
@@ -183,31 +187,61 @@
    animation: none;
   }
  }
+
+ @media (prefers-color-scheme: dark) {
+  .marquee {
+   box-shadow: -1px -1px 3px rgba(255, 255, 255, .25), 1px 1px 3px rgba(255, 255, 255, .25);
+  }
+
+  .gradient-text {
+   background-image: linear-gradient(to right, rgb(242, 131, 196), rgb(156, 239, 204), rgb(148, 187, 245));
+  }
+ }
 }
 
 @layer base {
  body {
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background: theme("colors.primary");
-  color: white;
   font-family: "Raleway";
  }
 
  svg {
   stroke-width: .5px;
   position: relative;
-  text-shadow: 0 10px 10px white;
+  text-shadow: 0 10px 10px theme("colors.light");
  }
 
  ul {
   background-position-x: 0;
-  background-image: linear-gradient(to bottom, white 25%, transparent 25%);
   background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, theme("colors.dark") 20%, transparent 20%);
   background-size: 1px 0px;
+  position: relative;
 
   @media (prefers-reduced-motion: no-preference) {
    transition: all 500ms ease-in-out;
+  }
+ }
+
+ #mouse {
+  $size: 50px;
+  position: fixed;
+  background-color: transparent;
+  border-radius: theme("borderRadius.full");
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+  height: $size;
+  width: $size;
+ }
+
+ @media (prefers-color-scheme: dark) {
+  svg {
+   text-shadow: 0 10px 10px theme("colors.dark");
+  }
+
+  ul {
+   background-image: linear-gradient(to bottom, theme("colors.light") 20%, transparent 20%);
   }
  }
 }
