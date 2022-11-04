@@ -42,7 +42,7 @@ export const projects: Project[] = [
  },
  {
   id: 5,
-  name: "Big Brain",
+  name: "Trivia Buddy",
   site: "https://thegoldenbolden.github.io/triviabuddy",
   github: "https://github.com/thegoldenbolden/triviabuddy",
   description:
