@@ -10,7 +10,7 @@ import {
 const Socials = () => {
  const className = "p-1 rounded ";
  return (
-  <div className="flex flex-wrap items-center justify-between flex-grow gap-2 text-4xl rounded text-complement sm:text-5xl md:text-6xl">
+  <div className="flex flex-wrap items-center justify-between flex-grow gap-2 text-4xl rounded sm:text-5xl md:text-6xl">
    <a
     title="LinkedIn"
     href="https://linkedin.com/in/jbolden9"
