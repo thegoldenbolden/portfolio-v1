@@ -122,7 +122,7 @@ export default function Contact() {
     />
    </div>
    <button
-    className="border-solid border-2 border-transparent hover:text-dark focus:text-dark hover:border-accent focus:border-accent transition-colors hover:bg-transparent focus:bg-transparent self-end w-full sm:w-[200px] max-w-full flex items-center justify-center px-8 py-2 bg-teal-500 text-light"
+    className="send border-solid border-2 border-transparent hover:text-dark focus:text-dark hover:border-accent focus:border-accent transition-colors hover:bg-transparent focus:bg-transparent self-end w-full sm:w-[200px] max-w-full flex items-center justify-center px-8 py-2 bg-teal-500 text-light"
     disabled={submitting}
     type="submit"
    >

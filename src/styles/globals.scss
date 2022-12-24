@@ -259,15 +259,41 @@
 }
 
 .spinner {
- @apply rounded-full border-2 border-transparent border-r-light border-t-light border-solid;
+ @apply rounded-full border-2 border-transparent border-r-dark border-t-dark border-solid;
  animation: spin infinite 1250ms linear;
  height: 1.5rem;
  width: 1.5rem;
+
+ @media (prefers-color-scheme: dark) {
+  @apply border-r-light border-t-light;
+ }
 
  @keyframes spin {
   100% {
    rotate: 180deg;
    transform: rotate(180deg);
+  }
+ }
+}
+
+.send {
+ svg {
+  @apply border-r-light border-t-light;
+
+  @media (prefers-color-scheme: dark) {
+   @apply border-r-light border-t-light;
+  }
+ }
+
+ &:hover,
+ &:focus {
+  svg {
+   @apply border-r-dark border-t-dark;
+
+   @media(prefers-color-scheme: dark) {
+    @apply border-r-light border-t-light;
+
+   }
   }
  }
 }
