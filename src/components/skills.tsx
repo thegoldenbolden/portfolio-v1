@@ -15,11 +15,13 @@ const skills = [
  "Heroku",
  "Netlify",
  "Vercel",
+ "AWS",
+ "Docker",
 ];
 
 const Skills = () => {
  return (
-  <div id="skills" className="flex justify-between py-2 text-sm rounded marquee">
+  <div id="skills" className="flex justify-between order-3 py-2 text-sm rounded sm:order-2 marquee">
    <div className="flex items-center marquee-inner">
     {[...skills, ...skills, ...skills, ...skills].map((s, i) => {
      return <span key={i}>{s}</span>;

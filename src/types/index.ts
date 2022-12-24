@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type ContentProps = { content: Project; setContent: Dispatch<SetStateAction<Project>> };
-export type ShowcaseProps = ContentProps & { isMobile: boolean };
+export type AboutProps = { active: Project; setActive: Dispatch<SetStateAction<Project>> };
+export type ListProps = AboutProps & { isMobile: boolean };
+
 export type Project = {
  id: number;
  name: string;
  description: string;
- site?: string;
+ live?: string;
  github?: string;
 };

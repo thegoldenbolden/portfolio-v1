@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 
 import useMobile from "../hooks/useMobile";
 import Socials from "../components/socials";
-import Content from "../components/content";
+import About from "../components/about";
 import { Project } from "../types";
-import { projects } from "../lib";
-import Showcase from "../components/showcase";
+import projects from "../lib";
+import ProjectsList from "../components/list";
+import Contact from "../components/contact";
 
 const Home: NextPage = () => {
- const [current, setCurrent] = useState<Project>(projects[0]);
+ const [active, setActive] = useState<Project>(projects[0]);
  const [prefersReduced, setPrefersReduced] = useState(false);
  const isMobile = useMobile();
 
@@ -38,9 +39,9 @@ const Home: NextPage = () => {
    div.style.left = px + "px";
    div.style.boxShadow = `${one}, ${two}`;
 
-   const email = document.getElementById("email");
-   if (!email) return;
-   email.style.backgroundImage = `linear-gradient(to right, ${color_1}, ${color_2})`;
+   const footer = document.getElementById("footer");
+   if (!footer) return;
+   footer.style.backgroundImage = `linear-gradient(to right, ${color_1}, ${color_2})`;
 
    const skills = document.getElementById("skills");
    if (!skills) return;
@@ -80,40 +81,43 @@ const Home: NextPage = () => {
     <meta name="theme-color" content="#ffffff" />
     <meta
      name="description"
-     content="Jacob Bolden is a web developer who specializes in making responsive and accessible websites."
+     content="Jacob Bolden is a enthusiastic individual with a strong foundation in web development. With a passion for creating innovative and user-friendly websites, they are constantly learning and improving their skills. Whether you need a simple website or a more complex web application, Jacob is ready to take on the challenge and deliver high-quality results."
     />
    </Head>
-   <div className="container py-4">
-    <header className="w-full p-2 order-last shadow shadow-dark dark:shadow-light bg-light dark:bg-dark z-[10] sticky bottom-0 sm:static sm:shadow-none sm:z-0 sm:bg-transparent sm:order-first">
-     <a
-      id="skip"
-      className="fixed left-0 z-10 w-full py-2 text-center duration-200 ease-in-out -top-full bg-dark text-light dark:bg-light dark:text-dark focus:top-0"
-      href="#showcase"
-     >
-      Skip to Projects
-     </a>
+   <div className="container flex flex-col gap-8">
+    <a
+     id="skip"
+     href="#projects"
+     className="fixed z-10 p-2 text-center min-w-screen bg-theme color-theme -top-full focus:top-0"
+    >
+     Skip to Projects
+    </a>
+    <a
+     id="skip"
+     href="#contact"
+     className="fixed z-10 p-2 text-center min-w-screen bg-theme color-theme -top-full focus:top-0"
+    >
+     Skip to Contact
+    </a>
+    <header className="flex justify-between w-full gap-4 p-4 sm:justify-end">
      <Socials />
     </header>
-    <main className="flex-grow p-2 justify-self-center">
-     <div className="flex flex-wrap justify-between h-full gap-8 md:gap-16">
-      <Content content={current} setContent={setCurrent} />
-      <Showcase isMobile={isMobile} content={current} setContent={setCurrent} />
-     </div>
+    <main className="grid grow grid-cols-1 gap-4 p-4 sm:grid-cols-[1fr_250px] md:grid-cols-[1fr_300px] grid-rows-[min-content_1fr]">
+     <About active={active} setActive={setActive} />
+     <ProjectsList isMobile={isMobile} active={active} setActive={setActive} />
     </main>
-    <footer className="flex flex-col items-center w-full p-2 text-center">
-     <p>Designed & Built by Jacob Bolden</p>
-     <a
-      title="Contact Me"
-      className="text-md gradient-text"
-      href="mailto:jlbolden9@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      id="email"
-     >
-      jlbolden9@gmail.com
-     </a>
-    </footer>
    </div>
+   <section
+    id="contact"
+    className="flex items-center justify-center p-4 mt-8 mb-16 border-t-solid border-t-px 3xl:items-start"
+   >
+    <Contact />
+   </section>
+   <footer className="fixed bottom-0 z-[1000] shadow shadow-dark bg-dark w-full block p-2 text-center">
+    <span id="footer" className="gradient-text">
+     Designed & Built by Jacob Bolden
+    </span>
+   </footer>
    {!isMobile && !prefersReduced && <div id="mouse" className="mouse" />}
   </>
  );

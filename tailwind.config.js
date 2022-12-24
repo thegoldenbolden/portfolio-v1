@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+
 module.exports = {
  content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
  theme: {
@@ -9,11 +9,18 @@ module.exports = {
     sans: ["Raleway", ...defaultTheme.fontFamily.sans],
    },
    screens: {
-    xs: "480px",
+    "3xl": "1600px",
    },
    colors: {
-    dark: colors.black,
-    light: colors.white,
+    dark: "#0c0c0c",
+    light: "#fcfcfc",
+    linkedin: "#0a66c2",
+    twitter: "#1d9bf0",
+    github: "#171515",
+    spotify: "#1DB954",
+    gmail: "#db4437",
+    instagram: "#F77737",
+    accent: "rgb(20 184 166)",
    },
   },
  },
