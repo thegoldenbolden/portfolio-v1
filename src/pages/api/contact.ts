@@ -16,8 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
  try {
   mail.setApiKey(process.env.SENDGRID_KEY);
-
-  throw Error("error");
   const msg = {
    to: "jlbolden9@gmail.com",
    from: "contact@jacobbolden.com",
