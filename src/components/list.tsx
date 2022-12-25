@@ -7,8 +7,8 @@ const List: FC<ListProps> = ({ active, isMobile, setActive }) => {
  const updateSlider = (i: number) => {
   const ul = document.getElementsByTagName("ul")?.item(0);
   if (!ul) return;
-  const size = i * 20; // Max height for each item.
-  ul.style.backgroundSize = `1px ${size * 5}%`; // max items * max size;
+  const size = i * 25; // Max height for each item.
+  ul.style.backgroundSize = `1px ${size * projects.length}%`; // max items * max size;
  };
 
  return (

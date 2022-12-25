@@ -26,15 +26,6 @@ export default [
  },
  {
   id: 2,
-  name: "Socialite",
-  github: "https://github.com/thegoldenbolden/chatroom",
-  description:
-   "Socialite is designed to provide a fast and convenient way for people to communicate with each other in real-time. It offers a simple and straightforward way to send text messages to other users. You can join public chat rooms to meet new people and discuss common interests. " +
-   "The frontend is built with Next and MUI, while the backend is built using Express and Socket.IO.\n\n" +
-   "Currently, there is no live version of Socialite available. However, I am actively working on developing and improving the app, and hope to have a live version available soon.",
- },
- {
-  id: 3,
   name: "Versus Zero",
   live: "https://versuszero.vercel.app",
   description:
@@ -43,15 +34,7 @@ export default [
    "Versus Zero lets users create matchups between two things (for exmaple, 'Spotify vs. Apple Music'), and then vote which option they believe to be better. It's a simple but fun way to engage with other users and share opinions.",
  },
  {
-  id: 4,
-  name: "Noodleats",
-  live: "https://thegoldenbolden.github.io/noodleats/",
-  github: "https://github.com/thegoldenbolden/noodleats",
-  description:
-   "A landing page for a DoorDash / UberEats style delivery company that delivers dishes involving noodles.\nThis project uses Next, Sass, and Tailwind.",
- },
- {
-  id: 5,
+  id: 3,
   name: "Trivia Buddy",
   live: "https://thegoldenbolden.github.io/triviabuddy",
   github: "https://github.com/thegoldenbolden/triviabuddy",
@@ -59,5 +42,14 @@ export default [
    "Trivia Buddy is game that allows users to test their knowledge over a wide range of topics. The questions are pulled from OpenTDB's API, which is a public API that provides access to a vast database of trivia questions.\n" +
    "The app is designed to be easy to use, with a simple and intuitive interface that allows users to start playing right away. The game is endless and keeps track of correct answers and questions skipped.\n\n" +
    "The main goal of this app is to provide users with a fun and engaging way to test their knowledge and also pass the time.",
+ },
+ {
+  id: 4,
+  name: "Noodle",
+  github: "https://github.com/thegoldenbolden/noodle",
+  description:
+   "Noodle is a user-friendly tool that enhances your Discord experience by providing a variety of helpful features and functions. Noodle lets you easily manage your server, moderate conversations, and customize your server's settings to your liking.\n\n" +
+   "It also has a wide range of fun and entertaining features, such as, trivia and gambling games, YouTube searching, and more.\n\n" +
+   "This app was build with Typescript and does not currently have a website.",
  },
 ] as Project[];
