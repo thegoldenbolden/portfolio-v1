@@ -16,7 +16,7 @@ const List: FC<ListProps> = ({ active, isMobile, setActive }) => {
    <Skills />
    <aside id="projects" className="flex flex-col order-last gap-2">
     <h2 className="text-3xl">Projects</h2>
-    <ul className="flex flex-col gap-4 border-l-[.5px] border-dark/25 dark:border-light/25">
+    <ul className="flex flex-col py-2 gap-4 border-l-[.5px] border-dark/25 dark:border-light/25">
      {projects.map((project) => {
       if (project.id == 0) return;
       const isActive = active.id == project.id ? "text-dark dark:text-light" : "";

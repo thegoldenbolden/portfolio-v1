@@ -16,14 +16,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
  try {
   mail.setApiKey(process.env.SENDGRID_KEY);
-  const msg = {
+  await mail.send({
    to: "jlbolden9@gmail.com",
    from: "contact@jacobbolden.com",
    subject,
-   text: `${email}\n${message}`,
-  };
-
-  await mail.send(msg);
+   text: `${email}\n\n${message}`,
+  });
   res.status(200).send({ ok: true, message: "Thanks for messaging me!" });
  } catch (error) {
   console.log(error);

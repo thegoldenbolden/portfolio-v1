@@ -41,7 +41,7 @@ const About: FC<AboutProps> = ({ active, setActive }) => {
         href={live}
         target="_blank"
         rel="noreferrer noopener"
-        className="px-4 py-2 text-base transition-colors border-2 border-transparent border-solid rounded-sm text-light hover:text-dark focus:text-dark bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
+        className="px-4 py-2 text-base text-center transition-colors border-2 border-transparent border-solid rounded-sm grow sm:grow-0 text-dark dark:hover:text-light dark:focus:text-light bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
        >
         View Site
        </a>
@@ -51,7 +51,7 @@ const About: FC<AboutProps> = ({ active, setActive }) => {
         href={github}
         target="_blank"
         rel="noreferrer noopener"
-        className="px-4 py-2 text-base transition-colors border-2 border-transparent border-solid rounded-sm text-light hover:text-dark focus:text-dark bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
+        className="px-4 py-2 text-base text-center transition-colors border-2 border-transparent border-solid rounded-sm grow sm:grow-0 text-dark dark:hover:text-light dark:focus:text-light bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
        >
         View Code
        </a>
