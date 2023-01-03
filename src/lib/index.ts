@@ -8,7 +8,7 @@ export default [
    "Hi, I'm a self-taught fullstack developer with a focus on creating beautiful and user-friendly web applications that prioritize the mobile experience.\n" +
    "I have a bachelor's degree in health studies from the University of Memphis, but I decided to stay true to my younger self and pursue a career in the world of design and development. " +
    "Other than coding, I love learning new languages, playing basketball, and rewatching my favorite TV Shows such as New Girl and Community.\n\n" +
-   "I am always looking for new opportunities to use my skills and expand my knowledge in the tech industry.\n" +
+   "I am always looking for new opportunities to use my skills and expand my knowledge in the tech industry. " +
    "If you have a position that could benefit from my experience and dedication, I would love to hear from you and see how we can work together.\n" +
    "I look forward to hearing from you! 😀",
  },
@@ -50,6 +50,6 @@ export default [
   description:
    "Noodle is a user-friendly tool that enhances your Discord experience by providing a variety of helpful features and functions. Noodle lets you easily manage your server, moderate conversations, and customize your server's settings to your liking.\n\n" +
    "It also has a wide range of fun and entertaining features, such as, trivia and gambling games, YouTube searching, and more.\n\n" +
-   "This app was build with Typescript and does not currently have a website.",
+   "This app was built with Typescript and does not currently have a website.",
  },
 ] as Project[];
