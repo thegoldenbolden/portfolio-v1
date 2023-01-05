@@ -65,6 +65,21 @@
   }
  }
 
+ .btn-primary {
+  @apply w-max text-base grow bg-transparent py-2 border-solid border-2 border-primary transition-colors px-4 flex items-center justify-center rounded-sm;
+  min-width: 150px;
+
+  &:active,
+  &:hover,
+  &:focus {
+   @apply text-light bg-primary;
+  }
+
+  @media (min-width: theme("screens.md")) {
+   flex-grow: 0;
+  }
+ }
+
  .marquee {
   position: relative;
   overflow: hidden;
@@ -123,13 +138,14 @@
    }
 
    100% {
-    background-position-x: calc(1em * 20.5);
+    background-position-x: calc(1.6em * 20.5);
    }
   }
  }
 
  .text-input {
-  @apply flex flex-col gap-2 opacity-50 color-theme;
+  @apply flex flex-col gap-2 rounded-sm bg-dark/10;
+  position: relative;
 
   label {
    @apply text-sm sr-only;
@@ -137,29 +153,47 @@
 
   input,
   textarea {
-   @apply transition-colors py-2 px-4 rounded-sm bg-teal-500/10;
+   @apply transition-colors p-4 bg-transparent;
    outline: none;
-   border-bottom: 2px solid transparent;
 
    &::placeholder {
-    @apply color-theme;
+    @apply color-theme text-light opacity-75;
     background: transparent;
    }
-
-   &:hover,
-   &:focus {
-    border-bottom: 2px solid theme("colors.teal.500");
-
-    @media (prefers-color-scheme: dark) {
-     border-bottom-color: theme("colors.teal.500");
-    }
-   }
-
   }
 
-  &:hover,
-  &:focus-within {
-   @apply opacity-100;
+  textarea {
+   min-height: 150px;
+  }
+
+  &:before {
+   position: absolute;
+   content: "";
+   left: 0;
+   bottom: 0;
+   height: 3px;
+   width: 0px;
+   background-color: theme("colors.transparent");
+   transition: width ease-in-out 1s;
+  }
+
+  &:active,
+  &:focus-within,
+  &:focus {
+   &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    transition: width ease-in-out 500ms;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: theme("colors.primary");
+   }
+  }
+
+  @media (prefers-color-scheme: dark) {
+   background: rgb(44, 43, 43);
   }
  }
 
@@ -277,6 +311,9 @@
 }
 
 .send {
+ width: auto;
+ align-self: flex-end;
+
  svg {
   @apply border-r-light border-t-light;
 
@@ -295,5 +332,9 @@
 
    }
   }
+ }
+
+ @media (min-width: theme("screens.sm")) {
+  width: max-content;
  }
 }

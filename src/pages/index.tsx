@@ -102,7 +102,7 @@ const Home: NextPage = () => {
     <header className="flex justify-between w-full gap-4 p-4 sm:justify-end">
      <Socials />
     </header>
-    <main className="grid grow grid-cols-1 gap-4 p-4 sm:grid-cols-[1fr_250px] md:grid-cols-[1fr_300px] grid-rows-[min-content_1fr]">
+    <main className="grid grow grid-cols-1 gap-4 p-4 md:grid-cols-[1fr_300px] grid-rows-[min-content_1fr]">
      <About active={active} setActive={setActive} />
      <ProjectsList isMobile={isMobile} active={active} setActive={setActive} />
     </main>

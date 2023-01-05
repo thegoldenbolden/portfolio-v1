@@ -1,10 +1,4 @@
-import {
- TbBrandLinkedin as LinkedIn,
- TbBrandSpotify as Music,
- TbBrandGithub as Github,
- TbBrandTwitter as Twitter,
- TbBrandGmail as Mail,
-} from "react-icons/tb";
+import { LinkedIn, Music, Github, Twitter, Mail } from "./icons";
 
 const Socials = () => {
  return (

@@ -8,10 +8,10 @@ const About: FC<AboutProps> = ({ active, setActive }) => {
  return (
   <>
    <p className="order-first py-2 text-2xl">Welcome, I&apos;m Jacob</p>
-   <div className="flex flex-col order-2 gap-2 sm:order-3">
+   <div className="flex flex-col order-2 gap-2 md:order-3">
     <h2 className="text-3xl">
      <button
-      className={`${active.id === 0 ? "opacity-100" : "opacity-50"}`}
+      className={`${active.id === 0 ? "opacity-100" : "opacity-50 hover:opacity-100 focus:opacity-100"}`}
       onClick={(e) => {
        setActive(projects[0]);
        const ul = document.getElementsByTagName("ul")?.item(0);
@@ -37,22 +37,12 @@ const About: FC<AboutProps> = ({ active, setActive }) => {
      </div>
      <div className="flex flex-wrap justify-end gap-2 mt-4">
       {live && (
-       <a
-        href={live}
-        target="_blank"
-        rel="noreferrer noopener"
-        className="px-4 py-2 text-base text-center transition-colors border-2 border-transparent border-solid rounded-sm grow sm:grow-0 text-dark dark:hover:text-light dark:focus:text-light bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
-       >
+       <a href={live} target="_blank" rel="noreferrer noopener" className="btn-primary">
         View Site
        </a>
       )}
       {github && (
-       <a
-        href={github}
-        target="_blank"
-        rel="noreferrer noopener"
-        className="px-4 py-2 text-base text-center transition-colors border-2 border-transparent border-solid rounded-sm grow sm:grow-0 text-dark dark:hover:text-light dark:focus:text-light bg-accent hover:bg-transparent focus:bg-transparent hover:border-accent"
-       >
+       <a href={github} target="_blank" rel="noreferrer noopener" className="btn-primary">
         View Code
        </a>
       )}

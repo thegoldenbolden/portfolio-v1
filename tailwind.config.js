@@ -20,7 +20,7 @@ module.exports = {
     spotify: "#1DB954",
     gmail: "#db4437",
     instagram: "#F77737",
-    accent: "rgb(20 184 166)",
+    primary: "#ce2d4f",
    },
   },
  },
