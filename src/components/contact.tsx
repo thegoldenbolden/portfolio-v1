@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { useState, FormEventHandler } from "react";
-import { TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter } from "react-icons/tb";
-import { InstagramSquare, LinkedInSquare, TwitterSquare } from "./icons";
+import { InstagramSquare, LinkedInSquare, TwitterSquare, Pdf } from "./icons";
 
 export default function Contact() {
  const [name, setName] = useState<string>("");
@@ -68,11 +68,20 @@ export default function Contact() {
       <InstagramSquare className="opacity-100 w-7 h-7" />
       Instagram
      </a>
+     <Link
+      href="resume.pdf"
+      target="_blank"
+      rel="noreferrer noopener"
+      className="flex items-center gap-2 opacity-75 hover:opacity-100 focus:opacity-100"
+     >
+      <Pdf className="opacity-100 w-7 h-7" />
+      Resume
+     </Link>
     </div>
    </div>
    {error && <span className="text-red-500">{error}</span>}
    {response && <span className="text-green-500">{response}</span>}
-   <div className="flex flex-wrap gap-2">
+   <div className="flex flex-wrap gap-4">
     <div className="grow text-input">
      <label htmlFor="name">Name</label>
      <input
@@ -117,16 +126,12 @@ export default function Contact() {
      className="min-h-[100px]"
      required={true}
      value={message}
-     placeholder="Enter your message"
+     placeholder="Message"
      onChange={(e) => handleChange(e.target.value, setMessage)}
     />
    </div>
-   <button
-    className="send border-solid border-2 border-transparent text-dark dark:hover:text-light dark:focus:text-light hover:border-accent focus:border-accent transition-colors hover:bg-transparent focus:bg-transparent self-end w-full sm:w-[200px] max-w-full flex items-center justify-center px-8 py-2 bg-teal-500"
-    disabled={submitting}
-    type="submit"
-   >
-    {submitting ? <svg className="spinner" viewBox="25 25 50 50"></svg> : "Send"}
+   <button className="send btn-primary" disabled={submitting} type="submit">
+    {submitting ? <svg className="spinner" viewBox="25 25 50 50"></svg> : "Send message!"}
    </button>
   </form>
  );
