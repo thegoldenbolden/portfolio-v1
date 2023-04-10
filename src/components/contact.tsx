@@ -105,7 +105,7 @@ export default function Contact() {
     />
    </div>
    <p className="text-base">
-    Visit{" "}
+    Visit the{" "}
     <Link className="text-orange-600 hover:underline focus:underline" href="https://jacobbolden.com/contact">
      current version
     </Link>{" "}
