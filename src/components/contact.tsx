@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, FormEventHandler } from "react";
 import { InstagramSquare, LinkedInSquare, TwitterSquare, Pdf } from "./icons";
 
 export default function Contact() {
@@ -7,13 +7,37 @@ export default function Contact() {
  const [email, setEmail] = useState<string>("");
  const [subject, setSubject] = useState<string>("");
  const [message, setMessage] = useState<string>("");
+ const [error, setError] = useState<string | null>("");
+ const [submitting, setSubmitting] = useState<boolean>(false);
+ const [response, setResponse] = useState<string>("");
+
+ const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+  e.preventDefault();
+
+  setSubmitting(true);
+  const response = await fetch("/api/contact", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ email, name, subject, message }),
+  }).catch((err) => err);
+
+  const res = await response.json();
+
+  if (!res.ok) {
+   setError(res.message);
+  } else {
+   setResponse(res.message);
+  }
+  setSubmitting(false);
+ };
 
  const handleChange = (value: string, set: React.Dispatch<React.SetStateAction<string>>) => {
+  error !== null && setError(null);
   set(value);
  };
 
  return (
-  <div className="z-10 max-w-full sm:min-w-[680px] flex flex-col gap-4 p-4">
+  <form className="z-10 max-w-full sm:min-w-[680px] flex flex-col gap-4 p-4" onSubmit={handleSubmit} method="POST">
    <div className="flex flex-col gap-2">
     <h2 className="text-3xl font-bold text-center">Get in touch with me</h2>
     <div className="flex flex-wrap gap-2 text-sm font-bold justify-evenly">
@@ -55,6 +79,8 @@ export default function Contact() {
      </Link>
     </div>
    </div>
+   {error && <span className="text-red-500">{error}</span>}
+   {response && <span className="text-green-500">{response}</span>}
    <div className="flex flex-wrap gap-4">
     <div className="grow text-input">
      <label htmlFor="name">Name</label>
@@ -104,13 +130,9 @@ export default function Contact() {
      onChange={(e) => handleChange(e.target.value, setMessage)}
     />
    </div>
-   <p>
-    click{" "}
-    <Link href="https://jacobbolden.com/contact" className="hover:underline focus:underline">
-     here
-    </Link>{" "}
-    to vist current version and send a message
-   </p>
-  </div>
+   <button className="send btn-primary" disabled={submitting} type="submit">
+    {submitting ? <svg className="spinner" viewBox="25 25 50 50"></svg> : "Send message!"}
+   </button>
+  </form>
  );
 }
