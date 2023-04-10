@@ -104,8 +104,12 @@ export default function Contact() {
      onChange={(e) => handleChange(e.target.value, setMessage)}
     />
    </div>
-   <p className="text-sm">
-    Visit <Link href="https://jacobbolden.com/contact">current version</Link> of my portfolio to send a message
+   <p className="text-base">
+    Visit{" "}
+    <Link className="text-orange-600 hover:underline focus:underline" href="https://jacobbolden.com/contact">
+     current version
+    </Link>{" "}
+    of my portfolio to send a message
    </p>
   </div>
  );
