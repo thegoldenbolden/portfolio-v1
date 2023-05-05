@@ -1,8 +1,8 @@
 # My Personal Website 
 
-- **Deployment**: [Vercel](https://vercel.com)
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com), [Sass](https://sass-lang.com)
+- Deployment: [Vercel](https://vercel.com)
+- Framework: [Next.js](https://nextjs.org/)
+- Styling: [Tailwind CSS](https://tailwindcss.com), [Sass](https://sass-lang.com)
 
 
 # __Versions__
